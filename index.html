@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <script>
+        async function login() {
+            console.log('login');
+            await authenticateUser();
+        }
+
+        async function register() {
+            console.log('register');
+            await registerUser();
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('[data-action="login"]')?.addEventListener('click', login);
+            document.querySelector('[data-action="register"]')?.addEventListener('click', register);
+        });
+    </script>
+</head>
+<body>
+    <h4>Login</h4>
+    <button data-action="login">Login</button>
+    <button data-action="register">Register</button>
+</body>
+</html>
